@@ -3,5 +3,41 @@
 @tailwind utilities;
 
 @layer base {
+  section {
+    /* @apply pt-[4.5rem];
+    @apply sm:pt-[5.1rem];
+    @apply md:pt-[5.75rem];
+    @apply lg:pt-[6rem]; */
+    @apply mt-[68px];
+    @apply sm:mt-[80px];
+    @apply lg:mt-[94px];
+    @apply xl:mt-[98px];
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  height: calc(100vh - 68px);
+}
+
+@media (min-width: 480px) {
+  section {
+    height: calc(100vh - 80px);
+  }
+}
+
+@media (min-width: 976px) {
+  section {
+    height: calc(100vh - 94px);
+  }
+}
+
+@media (min-width: 1440px) {
+  section {
+    height: calc(100vh - 98px);
+  }
 }
 

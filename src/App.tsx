@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Nav } from './components';
 import './i18n';
+import { About, Home } from './sections';
 
 function App() {
   const { t } = useTranslation();
@@ -8,7 +9,8 @@ function App() {
   return (
     <>
       <Nav />
-      <div className="text-10xl z-100">nice</div>
+      <Home />
+      <About />
     </>
   );
 }
