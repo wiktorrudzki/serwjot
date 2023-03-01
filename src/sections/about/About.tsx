@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="flex flex-col justify-center bg-primary md:grid md:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 px-10 sm:px-20 md:px-20 lg:px-28 xl:px-40"
+      className="flex flex-col justify-center bg-background md:grid md:grid-cols-2 gap-10 lg:gap-12 xl:gap-16 px-10 sm:px-20 md:px-20 lg:px-28 xl:px-40"
     >
       <img
         className="w-[12rem] sm:w-[13rem] md:w-[18rem] lg:w-[21rem] xl:w-[28rem] self-center justify-self-end rounded-bl-[80px] rounded-tr-[80px]"

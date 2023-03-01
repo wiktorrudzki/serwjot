@@ -24,6 +24,14 @@ html {
   box-sizing: border-box;
 }
 
+.arrow-left {
+  clip-path: polygon(75% 0, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0);
+}
+
+.arrow-right {
+  clip-path: polygon(25% 0, 75% 50%, 25% 100%, 50% 100%, 100% 50%, 50% 0);
+}
+
 /* section {
   height: calc(100vh - 68px);
 }

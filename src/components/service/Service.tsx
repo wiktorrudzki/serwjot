@@ -7,7 +7,11 @@ type Props = {
 
 const Service = ({ photo, title, description, photoAlt }: Props) => {
   return (
-    <div className="px-[1rem] py-[2rem] bg-background flex flex-col gap-5 xl:gap-8 xl:max-w-[25rem] justify-center items-center rounded-md border-[1px] border-gray-300 border-t-[3px] border-t-gray-500">
+    <div
+      className="px-[1rem] py-[2rem] bg-background flex flex-col gap-5 xl:gap-8 xl:max-w-[25rem] justify-center items-center rounded-md border-[1px] border-gray-300 border-t-[3px] border-t-gray-500
+      transition-all duration-300
+      hover:scale-[1.04] hover:shadow-service-hover-shadow"
+    >
       <img
         className="rounded-full w-[6.5rem] h-[6.5rem] md:w-[7rem] md:h-[7rem] xl:w-[9rem] xl:h-[9rem]"
         src={photo}

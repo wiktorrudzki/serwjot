@@ -26,6 +26,7 @@ module.exports = {
       },
       boxShadow: {
         custom: '0px 6px 12px rgb(0 0 0 / 33%)',
+        'service-hover-shadow': '0px 0px 30px -2px rgba(66, 68, 90, 1)',
       },
     },
   },
