@@ -1,6 +1,19 @@
 {
   "title": "SERWJOT",
+
   "home-title-1": "My",
   "home-title-2": "Business",
-  "home-subtitle": "Create solutions, creative results"
+  "home-subtitle": "Create solutions, creative results",
+
+  "about-title": "About",
+  "about-description-1": "The About page is the core description of your website. Here is where you let clients know what your website is about. You can edit all of this text and replace it with what you want to write. For example you can let them know how long you have been in business, what makes your company special, what are its core values and more.",
+  "about-description-2": "Edit your About page from the Pages tab by clicking the edit button.",
+
+  "services-title": "Services",
+  "service-1-title": "Consulting",
+  "service-1-description": "This page is used for listing the services offered by your company.",
+  "service-2-title": "Financial",
+  "service-2-description": "You can add any service you want or edit the ones that are already listed.",
+  "service-3-title": "Marketing",
+  "service-3-description": "You can edit all of this text and replace it with what you want to write."
 }

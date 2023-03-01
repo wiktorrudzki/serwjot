@@ -8,18 +8,23 @@
     @apply sm:pt-[5.1rem];
     @apply md:pt-[5.75rem];
     @apply lg:pt-[6rem]; */
-    @apply mt-[68px];
-    @apply sm:mt-[80px];
-    @apply lg:mt-[94px];
-    @apply xl:mt-[98px];
+    @apply pt-[68px];
+    @apply sm:pt-[80px];
+    @apply lg:pt-[94px];
+    @apply xl:pt-[98px];
+    @apply min-h-screen;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
   box-sizing: border-box;
 }
 
-section {
+/* section {
   height: calc(100vh - 68px);
 }
 
@@ -39,5 +44,5 @@ section {
   section {
     height: calc(100vh - 98px);
   }
-}
+} */
 

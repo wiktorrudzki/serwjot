@@ -1,19 +1,18 @@
-import { useTranslation } from 'react-i18next';
 import { Nav } from './components';
+import { About, Contact, Gallery, Home, Services } from './sections';
+
 import './i18n';
-import { About, Home } from './sections';
 
-function App() {
-  const { t } = useTranslation();
-
-  return (
-    <>
-      <Nav />
-      <Home />
-      <About />
-    </>
-  );
-}
+const App = () => (
+  <>
+    <Nav />
+    <Home />
+    <About />
+    <Services />
+    <Gallery />
+    <Contact />
+  </>
+);
 
 export default App;
 

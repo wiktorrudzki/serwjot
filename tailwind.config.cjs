@@ -22,7 +22,7 @@ module.exports = {
         shadow:
           'linear-gradient(90deg,rgb(0 0 0 / 80%) 5%,rgb(0 0 0 / 65%) 33%,rgb(0 0 0 / 10%) 90%);',
         'mobile-shadow':
-          'linear-gradient(90deg,rgb(0 0 0 / 80%) 5%,rgb(0 0 0 / 50%) 40%,rgb(0 0 0 / 10%) 90%);',
+          'linear-gradient(90deg,rgb(0 0 0 / 75%) 10%,rgb(0 0 0 / 60%) 40%,rgb(0 0 0 / 10%) 90%);',
       },
       boxShadow: {
         custom: '0px 6px 12px rgb(0 0 0 / 33%)',
