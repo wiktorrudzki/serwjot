@@ -15,6 +15,7 @@ const Services = () => {
       <div className="flex flex-col gap-6 justify-center items-center md:flex-row lg:mx-[2rem]">
         {services.map(({ photo, photoAlt, title, description }) => (
           <Service
+            key={photo}
             photo={photo}
             photoAlt={photoAlt}
             title={title}

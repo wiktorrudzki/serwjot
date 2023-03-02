@@ -49,36 +49,26 @@ const Slider = ({ data }: Props) => {
     });
   };
 
-  //   useEffect(() => {
-  //     console.log('xd');
-  //     window.addEventListener('resize', handleResize);
-  //     handleResize();
-  //     return () => window.removeEventListener('resize', handleResize);
-  //   }, [slide.currentTransform]);
-
   useEffect(() => {
-    if (
-      carouselWrapperRef.current &&
-      photoRef.current &&
-      photoWrapperRef.current
-    ) {
-      console.log(
-        carouselWrapperRef.current.offsetWidth / 2 -
-          photoRef.current.offsetWidth / 2,
-      );
-      photoWrapperRef.current.style.transform = `translateX(${slide.currentTransform}px)`;
-    }
-  }, []);
+    window.addEventListener('resize', handleResize);
+    setTimeout(() => {
+      handleResize();
+    });
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [slide.currentTransform]);
 
   return (
     <div ref={carouselWrapperRef} className="relative">
       <div className="overflow-hidden">
         <div
           ref={photoWrapperRef}
+          //   style={{ transform: `translateX(${slide.currentTransform}px)` }}
           className={`w-full flex justify-start duration-[500ms] ease-[cubic-bezier(1, 0, 0.2, 0.6);]`}
         >
           {data.map((photo, index) => (
             <img
+              key={photo.src}
               ref={photoRef}
               className={`${
                 index !== slide.currentPhoto &&
