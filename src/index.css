@@ -24,6 +24,11 @@ html {
   box-sizing: border-box;
 }
 
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
 .arrow-left {
   clip-path: polygon(75% 0, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0);
 }

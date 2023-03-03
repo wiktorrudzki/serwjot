@@ -14,10 +14,10 @@ const Nav = () => {
       onBlur={() => setShowMenu(false)}
       className="w-screen flex flex-col fixed top-0 left-0 shadow-custom z-10"
     >
-      <nav className="flex flex-wrap justify-between relative z-10 px-6 py-5 sm:py-6 bg-nav lg:px-8 xl:px-10">
+      <nav className="flex flex-wrap justify-between relative z-10 px-6 py-5 sm:py-6 bg-secondary lg:px-8 xl:px-10">
         <button>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-200 lg:text-4xl">
-            {t('title')}
+            <a href="#home">{t('title')}</a>
           </h2>
         </button>
         <button onClick={() => setShowMenu(prev => !prev)}>

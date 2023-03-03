@@ -1,6 +1,12 @@
 {
   "title": "SERWJOT",
 
+  "nav-1": "Home",
+  "nav-2": "About",
+  "nav-3": "Services",
+  "nav-4": "Gallery",
+  "nav-5": "Contact",
+
   "home-title-1": "My",
   "home-title-2": "Business",
   "home-subtitle": "Create solutions, creative results",
@@ -17,5 +23,12 @@
   "service-3-title": "Marketing",
   "service-3-description": "You can edit all of this text and replace it with what you want to write.",
 
-  "gallery-title": "Gallery"
+  "gallery-title": "Gallery",
+
+  "contact-title": "Contact",
+  "contact-place": "Jaworzno, Śląskie, Polska",
+  "contact-email": "jakub.jedrzejczak@gmail.com",
+  "contact-btn": "contact us",
+
+  "license": "Copyright © 2023 All rights reserved"
 }

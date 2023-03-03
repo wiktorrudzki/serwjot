@@ -12,9 +12,9 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
+      secondary: '#3d3d3d',
       primary: '#f9f9f9',
       background: '#f0f0f0',
-      nav: '#333',
     },
     extend: {
       backgroundImage: {
@@ -27,6 +27,7 @@ module.exports = {
       boxShadow: {
         custom: '0px 6px 12px rgb(0 0 0 / 33%)',
         'service-hover-shadow': '0px 0px 30px -2px rgba(66, 68, 90, 1)',
+        'input-shadow': 'inset 0 1px 1px rgb(0 0 0 / 8%)',
       },
     },
   },

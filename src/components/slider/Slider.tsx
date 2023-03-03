@@ -63,7 +63,6 @@ const Slider = ({ data }: Props) => {
       <div className="overflow-hidden">
         <div
           ref={photoWrapperRef}
-          //   style={{ transform: `translateX(${slide.currentTransform}px)` }}
           className={`w-full flex justify-start duration-[500ms] ease-[cubic-bezier(1, 0, 0.2, 0.6);]`}
         >
           {data.map((photo, index) => (
