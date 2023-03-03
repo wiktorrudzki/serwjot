@@ -4,12 +4,12 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-secondary pt-[2rem] text-white pb-[4rem] flex justify-around px-[8rem]">
+    <footer className="bg-secondary pt-[2rem] text-white pb-[2rem] md:pb-[4rem] flex flex-col gap-[2rem] md:gap-0 px-[2rem] md:flex-row justify-around md:px-[5rem] lg:px-[8rem]">
       <div className="flex flex-col">
         <span className="text-lg">{t('title')}</span>
         <span>{t('license')}</span>
       </div>
-      <ul className="flex gap-[0.75rem]">
+      <ul className="flex flex-col lg:flex-row gap-[0.75rem] text-[1.1rem]">
         <li>
           <a href="#home">{t('nav-1').toUpperCase()}</a>
         </li>

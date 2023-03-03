@@ -12,19 +12,17 @@ import TextArea from '../../components/input/TextArea';
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [form, setForm, errors] = useForm();
-
-  console.log(errors);
+  const [form, setForm, errors, isError] = useForm();
 
   return (
     <section
       id="contact"
-      className="bg-primary flex flex-col gap-[3rem] items-center justify-center w-full xl:px-[16rem]"
+      className="pb-0 bg-primary flex flex-col gap-[3rem] items-center justify-center w-full"
     >
       <Title>{t('contact-title')}</Title>
-      <div className="flex center w-full">
-        <div className="w-full flex justify-center gap-[0.75rem]">
-          <div className="flex flex-col  gap-[0.75rem]">
+      <div className="flex gap-[3rem] px-[1rem] sm:px-[2rem] md:px-[5rem] lg:px-[12rem] xl:px-[16rem] md:gap-0 flex-col md:flex-row w-full">
+        <div className="w-full flex md:justify-center gap-[0.75rem]">
+          <div className="flex flex-col gap-[0.75rem]">
             <span>{t('contact-place')}</span>
             <span className="flex gap-[0.5rem]">
               <img className="w-[1.25rem]" src={emailIcon} alt="email icon" />
@@ -32,7 +30,7 @@ const Contact = () => {
             </span>
           </div>
         </div>
-        <Form btnContent={t('contact-btn')}>
+        <Form isError={isError} btnContent={t('contact-btn')}>
           <div className="grid grid-cols-2 gap-[1.75rem]">
             <NameInput
               onChange={e => setForm('name', e.target.value)}

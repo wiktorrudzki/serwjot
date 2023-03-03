@@ -28,7 +28,7 @@ const Nav = () => {
       <NavList
         styles={`${
           showMenu ? 'top-full' : 'top-[-324px]'
-        } absolute flex flex-col sm:gap-6 pb-6 sm:pb-8 gap-4 w-full px-6 md:hidden text-gray-200 transition-all duration-500 bg-nav`}
+        } absolute flex flex-col sm:gap-6 pb-6 sm:pb-8 gap-4 w-full px-6 md:hidden text-gray-200 transition-all duration-500 bg-secondary`}
       />
     </div>
   );

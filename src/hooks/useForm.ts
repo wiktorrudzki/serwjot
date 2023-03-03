@@ -50,27 +50,30 @@ const toErrors = <T extends {}>(form: T): FormErrors =>
     {} as FormErrors,
   );
 
+const isError = <T extends {}>(form: T) =>
+  Object.entries(form).some(([key, { error }]: any) => error !== undefined);
+
 const useForm = () => {
   const template = {
     name: {
       value: '',
       validator: validateName,
-      error: validateName(''),
+      error: '',
     },
     email: {
       value: '',
       validator: validateEmail,
-      error: validateEmail(''),
+      error: '',
     },
     number: {
       value: '',
       validator: validateNumber,
-      error: validateNumber(''),
+      error: '',
     },
     message: {
       value: '',
       validator: validateMessage,
-      error: validateMessage(''),
+      error: '',
     },
   } as Form;
 
@@ -87,7 +90,7 @@ const useForm = () => {
     }));
   };
 
-  return [toValues(form), updateForm, toErrors(form)] as const;
+  return [toValues(form), updateForm, toErrors(form), isError(form)] as const;
 };
 
 export default useForm;
