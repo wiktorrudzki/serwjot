@@ -72,8 +72,8 @@ const Slider = ({ data }: Props) => {
               ref={photoRef}
               className={`${
                 index !== slide.currentPhoto &&
-                'blur-lg scale-[0.75] lg:scale-[0.8] xl:scale-[0.85]'
-              } w-[72%] h-[40.5%] md:w-[66%] md:h-[37.125%] transition-all duration-[500ms] ease-[cubic-bezier(1, 0, 0.2, 0.6);]`}
+                'blur-md scale-[0.75] lg:scale-[0.8] xl:scale-[0.85]'
+              } w-[72%] h-[40.5%] md:w-[60%] md:h-[33.75%] transition-all duration-[500ms] ease-[cubic-bezier(1, 0, 0.2, 0.6);]`}
               src={photo.src}
               alt={photo.alt}
             />

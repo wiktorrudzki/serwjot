@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import xIcon from '../../assets/icons/x-icon.svg';
@@ -10,7 +10,10 @@ const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="w-screen flex flex-col fixed top-0 left-0 shadow-custom z-10">
+    <div
+      onBlur={() => setShowMenu(false)}
+      className="w-screen flex flex-col fixed top-0 left-0 shadow-custom z-10"
+    >
       <nav className="flex flex-wrap justify-between relative z-10 px-6 py-5 sm:py-6 bg-nav lg:px-8 xl:px-10">
         <button>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-200 lg:text-4xl">

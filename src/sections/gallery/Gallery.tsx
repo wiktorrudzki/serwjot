@@ -8,7 +8,7 @@ const Gallery = () => {
   return (
     <section
       id="gallery"
-      className="pb-[4rem] px-0 md:px-[2rem] lg:px-[6rem] xl:px-[12rem] bg-background flex flex-col gap-10 lg:gap-16 items-center justify-center"
+      className="px-0 md:px-[2rem] lg:px-[9rem] xl:px-[16rem] bg-background flex flex-col gap-10 xl:gap-16 items-center justify-center"
     >
       <Title>{t('gallery-title')}</Title>
       <Slider data={gallery} />

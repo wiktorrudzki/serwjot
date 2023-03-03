@@ -4,15 +4,15 @@
 
 @layer base {
   section {
-    /* @apply pt-[4.5rem];
-    @apply sm:pt-[5.1rem];
-    @apply md:pt-[5.75rem];
-    @apply lg:pt-[6rem]; */
+    @apply h-auto;
+    @apply py-[68px];
+    @apply sm:py-[80px];
+    @apply md:py-0;
     @apply pt-[68px];
     @apply sm:pt-[80px];
     @apply lg:pt-[94px];
     @apply xl:pt-[98px];
-    @apply min-h-screen;
+    @apply md:min-h-screen;
   }
 }
 
@@ -31,26 +31,4 @@ html {
 .arrow-right {
   clip-path: polygon(25% 0, 75% 50%, 25% 100%, 50% 100%, 100% 50%, 50% 0);
 }
-
-/* section {
-  height: calc(100vh - 68px);
-}
-
-@media (min-width: 480px) {
-  section {
-    height: calc(100vh - 80px);
-  }
-}
-
-@media (min-width: 976px) {
-  section {
-    height: calc(100vh - 94px);
-  }
-}
-
-@media (min-width: 1440px) {
-  section {
-    height: calc(100vh - 98px);
-  }
-} */
 
