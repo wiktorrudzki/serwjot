@@ -7,7 +7,7 @@ type Props = React.ComponentPropsWithoutRef<typeof Title> & {
 
 const TitleWrapper = ({ children, title }: Props) => {
   return (
-    <div className="flex flex-col gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem] lg:gap-[2.5rem] xl:gap-[3rem]">
+    <div className="flex flex-col w-full gap-[1rem] sm:gap-[1.5rem] md:gap-[2rem] lg:gap-[2.5rem] xl:gap-[3rem]">
       <Title>{title}</Title>
       {children}
     </div>

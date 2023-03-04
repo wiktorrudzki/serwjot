@@ -29,6 +29,10 @@ module.exports = {
         'service-hover-shadow': '0px 0px 30px -2px rgba(66, 68, 90, 1)',
         'input-shadow': 'inset 0 1px 1px rgb(0 0 0 / 8%)',
       },
+      animation: {
+        'front-btn': 'frontBtn 5s forwards',
+        'back-btn': 'backBtn 5s forwards',
+      },
     },
   },
   plugins: [require('flowbite/plugin')],

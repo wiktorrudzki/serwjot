@@ -49,3 +49,70 @@ label:focus,
   clip-path: polygon(25% 0, 75% 50%, 25% 100%, 50% 100%, 100% 50%, 50% 0);
 }
 
+.btnContact {
+}
+
+.card {
+  position: relative;
+}
+
+.front,
+.back {
+  display: block;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 0.5s;
+  transition-property: transform, opacity;
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back {
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(-180deg);
+  background-color: rgb(20, 185, 20);
+  color: white;
+}
+
+@keyframes frontBtn {
+  20% {
+    opacity: 0;
+    transform: rotateX(180deg);
+  }
+  80% {
+    opacity: 0;
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes backBtn {
+  20% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transform: rotateY(-180deg);
+    transform: rotateY(0deg);
+  }
+  80% {
+    opacity: 1;
+    transform: rotateX(0deg);
+    transform: rotateY(-180deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(0);
+    transform: rotateY(0);
+    opacity: 0;
+  }
+}
+

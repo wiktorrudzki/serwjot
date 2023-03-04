@@ -6,7 +6,7 @@ import {
   validateNumber,
 } from './validators';
 
-type Form = {
+export type Form = {
   name: {
     value: string;
     validator: (value: string) => undefined | string;
@@ -29,7 +29,7 @@ type Form = {
   };
 };
 
-type FormValues = Record<keyof Form, string>;
+export type FormValues = Record<keyof Form, string>;
 type FormErrors = Record<keyof Form, string | undefined>;
 
 const toValues = <T extends {}>(form: T): FormValues =>
@@ -79,15 +79,19 @@ const useForm = () => {
 
   const [form, setForm] = useState(template);
 
-  const updateForm = (key: keyof typeof form, value: string) => {
-    setForm(prev => ({
-      ...prev,
-      [key]: {
-        ...form[key],
-        value: value,
-        error: form[key]?.validator(value),
-      },
-    }));
+  const updateForm = (key: keyof typeof form | 'clear', value: string) => {
+    if (key === 'clear') {
+      setForm(template);
+    } else {
+      setForm(prev => ({
+        ...prev,
+        [key]: {
+          ...form[key],
+          value: value,
+          error: form[key]?.validator(value),
+        },
+      }));
+    }
   };
 
   return [toValues(form), updateForm, toErrors(form), isError(form)] as const;

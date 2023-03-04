@@ -30,23 +30,36 @@ const Contact = () => {
               </span>
             </div>
           </div>
-          <Form isError={isError} btnContent={t('contact-btn')}>
+          <Form
+            isError={isError}
+            btnContent={t('contact-btn')}
+            form={form}
+            setForm={setForm}
+          >
             <div className="grid grid-cols-2 gap-[1.75rem]">
               <NameInput
                 onChange={e => setForm('name', e.target.value)}
                 placeholder="Name"
                 error={errors.name}
+                value={form.name}
+                name="name"
+                required
               />
               <NumberInput
                 onChange={e => setForm('number', e.target.value)}
                 placeholder="Phone"
                 error={errors.number}
+                value={form.number}
+                name="number"
               />
             </div>
             <EmailInput
               onChange={e => setForm('email', e.target.value)}
               placeholder="Email address"
               error={errors.email}
+              value={form.email}
+              name="email"
+              required
             />
             <TextArea
               onChange={e => setForm('message', e.target.value)}
@@ -54,6 +67,9 @@ const Contact = () => {
       placeholder:text-gray-400"
               placeholder="Message"
               error={errors.message}
+              value={form.message}
+              name="message"
+              required
             />
           </Form>
         </div>

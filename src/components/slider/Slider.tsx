@@ -84,7 +84,7 @@ const Slider = ({ data }: Props) => {
   };
 
   return (
-    <div ref={carouselWrapperRef} className="relative">
+    <div ref={carouselWrapperRef} className="relative lg:pb-[3rem]">
       <div className="overflow-hidden">
         <div
           onDragOver={e => e.preventDefault()}
@@ -94,7 +94,7 @@ const Slider = ({ data }: Props) => {
           onTouchStart={e => setMouseStart(e.touches[0].clientX)}
           onMouseDown={e => setMouseStart(e.nativeEvent.clientX)}
           ref={photoWrapperRef}
-          className={`w-fullv cursor-grab flex justify-start duration-[500ms] ease-[cubic-bezier(1, 0, 0.2, 0.6);]`}
+          className={`w-full cursor-grab flex justify-start duration-[500ms] ease-[cubic-bezier(1, 0, 0.2, 0.6);] z-10`}
         >
           {data.map((photo, index) => (
             <img
