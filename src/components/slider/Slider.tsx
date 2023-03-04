@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import useSlider from './hooks/useSlider';
 import Arrow from '../arrow/Arrow';
 
@@ -10,24 +10,19 @@ type Props = {
 };
 
 const Slider = ({ data }: Props) => {
+  const [mouseStart, setMouseStart] = useState(0);
   const { slide, changeSlide } = useSlider();
   const carouselWrapperRef = useRef<HTMLDivElement>(null);
   const photoWrapperRef = useRef<HTMLImageElement>(null);
   const photoRef = useRef<HTMLImageElement>(null);
 
-  const transformRight = () => {
+  const transform = (direction: 'left' | 'right') => {
     if (photoRef.current)
       changeSlide(
         'currentTransform',
-        slide.currentTransform - photoRef.current.offsetWidth,
-      );
-  };
-
-  const transformLeft = () => {
-    if (photoRef.current)
-      changeSlide(
-        'currentTransform',
-        slide.currentTransform + photoRef.current.offsetWidth,
+        direction === 'right'
+          ? slide.currentTransform - photoRef.current.offsetWidth
+          : slide.currentTransform + photoRef.current.offsetWidth,
       );
   };
 
@@ -58,12 +53,48 @@ const Slider = ({ data }: Props) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [slide.currentTransform]);
 
+  const handleSlidingRight = () => {
+    changeSlide('currentPhoto', ++slide.currentPhoto);
+    transform('right');
+  };
+
+  const handleSlidingLeft = () => {
+    changeSlide('currentPhoto', --slide.currentPhoto);
+    transform('left');
+  };
+
+  const dragEnd = (e: any) => {
+    if (e.clientX + 100 < mouseStart && slide.currentPhoto !== data.length - 1)
+      handleSlidingRight();
+    else if (mouseStart + 100 < e.clientX && slide.currentPhoto !== 0)
+      handleSlidingLeft();
+  };
+
+  const touchEnd = (e: any) => {
+    if (
+      e.changedTouches[0].clientX + 50 < mouseStart &&
+      slide.currentPhoto !== data.length - 1
+    )
+      handleSlidingRight();
+    else if (
+      mouseStart + 50 < e.changedTouches[0].clientX &&
+      slide.currentPhoto !== 0
+    )
+      handleSlidingLeft();
+  };
+
   return (
     <div ref={carouselWrapperRef} className="relative">
       <div className="overflow-hidden">
         <div
+          onDragOver={e => e.preventDefault()}
+          draggable
+          onDragEnd={dragEnd}
+          onTouchEnd={touchEnd}
+          onTouchStart={e => setMouseStart(e.touches[0].clientX)}
+          onMouseDown={e => setMouseStart(e.nativeEvent.clientX)}
           ref={photoWrapperRef}
-          className={`w-full flex justify-start duration-[500ms] ease-[cubic-bezier(1, 0, 0.2, 0.6);]`}
+          className={`w-fullv cursor-grab flex justify-start duration-[500ms] ease-[cubic-bezier(1, 0, 0.2, 0.6);]`}
         >
           {data.map((photo, index) => (
             <img
@@ -80,18 +111,12 @@ const Slider = ({ data }: Props) => {
         </div>
       </div>
       <Arrow
-        handleClick={() => {
-          changeSlide('currentPhoto', --slide.currentPhoto);
-          transformLeft();
-        }}
+        handleClick={handleSlidingLeft}
         direction="left"
         isHidden={slide.currentPhoto === 0}
       />
       <Arrow
-        handleClick={() => {
-          changeSlide('currentPhoto', ++slide.currentPhoto);
-          transformRight();
-        }}
+        handleClick={handleSlidingRight}
         direction="right"
         isHidden={slide.currentPhoto === data.length - 1}
       />

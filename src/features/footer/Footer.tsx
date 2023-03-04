@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import FooterLink from './FooterLink';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -10,21 +11,11 @@ const Footer = () => {
         <span>{t('license')}</span>
       </div>
       <ul className="flex flex-col lg:flex-row gap-[0.75rem] text-[1.1rem]">
-        <li>
-          <a href="#home">{t('nav-1').toUpperCase()}</a>
-        </li>
-        <li>
-          <a href="#about">{t('nav-2').toUpperCase()}</a>
-        </li>
-        <li>
-          <a href="#services">{t('nav-3').toUpperCase()}</a>
-        </li>
-        <li>
-          <a href="#gallery">{t('nav-4').toUpperCase()}</a>
-        </li>
-        <li>
-          <a href="#contact">{t('nav-5').toUpperCase()}</a>
-        </li>
+        <FooterLink href="#home">{t('nav-1')}</FooterLink>
+        <FooterLink href="#about">{t('nav-2')}</FooterLink>
+        <FooterLink href="#services">{t('nav-3')}</FooterLink>
+        <FooterLink href="#gallery">{t('nav-4')}</FooterLink>
+        <FooterLink href="#contact">{t('nav-5')}</FooterLink>
       </ul>
     </footer>
   );

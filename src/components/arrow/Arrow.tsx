@@ -6,7 +6,7 @@ type Props = {
 
 const Arrow = ({ handleClick, isHidden, direction }: Props) => (
   <div
-    onClick={() => handleClick()}
+    onClick={handleClick}
     className={`${isHidden && 'hidden'} ${
       direction === 'left'
         ? 'pl-[1rem] left-0 justify-start'

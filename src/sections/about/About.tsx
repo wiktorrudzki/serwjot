@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import photo from '../../assets/images/about.jpg';
+
 const About = () => {
   const { t } = useTranslation();
 

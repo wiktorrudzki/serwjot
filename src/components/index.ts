@@ -1,4 +1,5 @@
 export { default as Title } from './title/Title';
+export { default as TitleWrapper } from './title/TitleWrapper';
 
 export { default as Service } from './service/Service';
 
