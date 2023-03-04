@@ -1,21 +1,27 @@
 export const validateName = (value: string) =>
-  value.length > 2 ? undefined : 'Name cannot have less than 3 characters';
+  value === ''
+    ? 'To pole jest wymagane'
+    : value.length > 2
+    ? undefined
+    : 'Nazwa nie może mieć mniej niz 3 znaki';
 
 export const validateEmail = (value: string) =>
   value === ''
-    ? 'This field is required'
+    ? 'To pole jest wymagane'
     : /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         value,
       )
     ? undefined
-    : 'Incorrect email format';
+    : 'Nieprawidłowy format';
 
 export const validateNumber = (value: string) =>
-  value.length !== 9 ? 'Phone number must be exactly 9 digits' : undefined;
+  value.length !== 9
+    ? 'Numer telefonu powinien zawierać dokładnie 9 cyfr'
+    : undefined;
 
 export const validateMessage = (value: string) =>
   value === ''
-    ? 'This field is required'
+    ? 'To pole jest wymagane'
     : value.length < 5
-    ? 'Message is too short'
+    ? 'Wiadomość jest zbyt krótka'
     : undefined;

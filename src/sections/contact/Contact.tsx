@@ -33,8 +33,8 @@ const Contact = () => {
           <Form
             isError={isError}
             btnContent={t('contact-btn')}
-            form={form}
             setForm={setForm}
+            btnSentContent={t('contact-btn-sent')}
           >
             <div className="grid grid-cols-2 gap-[1.75rem]">
               <NameInput

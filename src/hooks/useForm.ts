@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Form, FormValues } from '../types';
 import {
   validateEmail,
   validateMessage,
@@ -6,30 +7,6 @@ import {
   validateNumber,
 } from './validators';
 
-export type Form = {
-  name: {
-    value: string;
-    validator: (value: string) => undefined | string;
-    error: string | undefined;
-  };
-  email: {
-    value: string;
-    validator: (value: string) => undefined | string;
-    error: string | undefined;
-  };
-  number: {
-    value: string;
-    validator: (value: string) => undefined | string;
-    error: string | undefined;
-  };
-  message?: {
-    value: string;
-    validator: (value: string) => undefined | string;
-    error: string | undefined;
-  };
-};
-
-export type FormValues = Record<keyof Form, string>;
 type FormErrors = Record<keyof Form, string | undefined>;
 
 const toValues = <T extends {}>(form: T): FormValues =>
@@ -75,7 +52,7 @@ const useForm = () => {
       validator: validateMessage,
       error: '',
     },
-  } as Form;
+  };
 
   const [form, setForm] = useState(template);
 

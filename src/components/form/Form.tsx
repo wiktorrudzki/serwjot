@@ -1,75 +1,62 @@
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Form as FormType, FormValues } from '../../hooks/useForm';
+import { Form as FormType } from '../../types';
 
 type Props = {
   children: React.ReactNode;
   btnContent: string;
   isError: boolean;
-  form: FormValues;
   setForm: (key: keyof FormType | 'clear', value: string) => void;
+  btnSentContent: string;
 };
 
-const Form = ({ children, btnContent, isError, setForm }: Props) => {
-  const formRef = useRef<HTMLFormElement>(null);
+const Form = ({
+  children,
+  btnContent,
+  isError,
+  setForm,
+  btnSentContent,
+}: Props) => {
   const frontBtnRef = useRef<HTMLButtonElement>(null);
   const backBtnRef = useRef<HTMLButtonElement>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(
-      process.env.VITE_EMAIL_SERVICE_ID,
-      process.env.VITE_EMAIL_TEMPLATE_ID,
-      process.env.VITE_EMAIL_USER_ID,
-    );
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAIL_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+        e.currentTarget,
+        import.meta.env.VITE_EMAIL_USER_ID,
+      )
+      .then(
+        () => {
+          if (frontBtnRef.current && backBtnRef.current) {
+            frontBtnRef.current.style.animation = 'frontBtn 2.5s';
+            backBtnRef.current.style.animation = 'backBtn 2.5s';
 
-    if (
-      formRef.current &&
-      import.meta.env.VITE_EMAIL_SERVICE_ID &&
-      import.meta.env.VITE_EMAIL_TEMPLATE_ID &&
-      import.meta.env.VITE_EMAIL_USER_ID
-    )
-      emailjs
-        .sendForm(
-          import.meta.env.VITE_EMAIL_SERVICE_ID,
-          import.meta.env.VITE_EMAIL_TEMPLATE_ID,
-          formRef.current,
-          import.meta.env.VITE_EMAIL_USER_ID,
-        )
-        .then(
-          result => {
-            console.log(result.text);
+            setTimeout(() => {
+              if (frontBtnRef.current && backBtnRef.current) {
+                frontBtnRef.current.style.animation = '';
+                backBtnRef.current.style.animation = '';
+              }
+            }, 2500);
+          }
 
-            if (frontBtnRef.current && backBtnRef.current) {
-              frontBtnRef.current.style.animation = 'frontBtn 2.5s';
-              backBtnRef.current.style.animation = 'backBtn 2.5s';
-
-              setTimeout(() => {
-                if (frontBtnRef.current && backBtnRef.current) {
-                  frontBtnRef.current.style.animation = '';
-                  backBtnRef.current.style.animation = '';
-                }
-              }, 2500);
-            }
-
-            setForm('clear', '');
-          },
-          error => {
-            console.log(error.text);
-          },
-        );
+          setForm('clear', '');
+        },
+        error => {
+          console.log(error.text);
+        },
+      );
   };
 
   return (
-    <form
-      ref={formRef}
-      className="flex flex-col gap-[1rem] w-full"
-      onSubmit={sendEmail}
-    >
+    <form className="flex flex-col gap-[1rem] w-full" onSubmit={sendEmail}>
       {children}
       <div
-        className={`card not:disabled:active:scale-[0.95] transition-all ${
+        className={`relative not:disabled:active:scale-[0.95] transition-all ${
           isError ? 'cursor-not-allowed opacity-[0.7]' : ''
         }`}
       >
@@ -87,7 +74,7 @@ const Form = ({ children, btnContent, isError, setForm }: Props) => {
             isError ? 'cursor-not-allowed opacity-[0.7]' : ''
           }`}
         >
-          EMAIL SENT
+          {btnSentContent.toUpperCase()}
         </button>
       </div>
     </form>

@@ -1,5 +1,5 @@
 import { Service, TitleWrapper } from '../../components';
-import { services as data } from '../../assets/services/services';
+import { services as data } from '../../data/services/services';
 import { useTranslation } from 'react-i18next';
 
 const Services = () => {

@@ -24,21 +24,15 @@ html {
   box-sizing: border-box;
 }
 
-textarea:hover,
-input:hover,
 textarea:active,
 input:active,
 textarea:focus,
 input:focus,
-button:focus,
-button:active,
-button:hover,
-label:focus,
-.btn:active,
-.btn.active {
+label:focus {
   outline: 0px !important;
   -webkit-appearance: none;
   box-shadow: none !important;
+  border: 1px solid black !important;
 }
 
 .arrow-left {
@@ -47,13 +41,6 @@ label:focus,
 
 .arrow-right {
   clip-path: polygon(25% 0, 75% 50%, 25% 100%, 50% 100%, 100% 50%, 50% 0);
-}
-
-.btnContact {
-}
-
-.card {
-  position: relative;
 }
 
 .front,

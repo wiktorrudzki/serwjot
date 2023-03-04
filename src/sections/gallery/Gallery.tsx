@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Slider, Title, TitleWrapper } from '../../components';
-import { gallery } from '../../assets/gallery/gallery';
+import { gallery } from '../../data/gallery/gallery';
 
 const Gallery = () => {
   const { t } = useTranslation();
