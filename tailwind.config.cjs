@@ -18,7 +18,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'home-background': 'url(./assets/images/home.jpg)',
+        'home-desktop-background': 'url(./assets/images/home-desktop.jpg)',
+        'home-mobile-background': 'url(./assets/images/home-mobile.jpg)',
         shadow:
           'linear-gradient(90deg,rgb(0 0 0 / 80%) 5%,rgb(0 0 0 / 65%) 33%,rgb(0 0 0 / 10%) 90%);',
         'mobile-shadow':

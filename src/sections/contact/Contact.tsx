@@ -6,9 +6,13 @@ import {
   NumberInput,
   TitleWrapper,
 } from '../../components';
-import emailIcon from '../../assets/icons/email-icon.svg';
 import useForm from '../../hooks/useForm';
 import TextArea from '../../components/input/TextArea';
+import InfoWrapper from './InfoWrapper';
+import emailIcon from '../../assets/icons/email-icon.svg';
+import locationIcon from '../../assets/icons/location-icon.svg';
+import userIcon from '../../assets/icons/user-icon.svg';
+import cityIcon from '../../assets/icons/city-icon.svg';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -22,12 +26,13 @@ const Contact = () => {
       <TitleWrapper title={t('contact-title')}>
         <div className="flex gap-[3rem] px-[1rem] sm:px-[2rem] md:px-[5rem] lg:px-[12rem] xl:px-[16rem] md:gap-0 flex-col md:flex-row w-full">
           <div className="w-full flex md:justify-center gap-[0.75rem]">
-            <div className="flex flex-col gap-[0.75rem]">
-              <span>{t('contact-place')}</span>
-              <span className="flex gap-[0.5rem]">
-                <img className="w-[1.25rem]" src={emailIcon} alt="email icon" />
-                {t('contact-email')}
-              </span>
+            <div className="flex flex-col gap-[0.5rem]">
+              <InfoWrapper src={userIcon}>{t('contact-name')}</InfoWrapper>
+              <InfoWrapper src={locationIcon}>
+                {t('contact-address')}
+              </InfoWrapper>
+              <InfoWrapper src={cityIcon}>{t('contact-city')}</InfoWrapper>
+              <InfoWrapper src={emailIcon}>{t('contact-email')}</InfoWrapper>
             </div>
           </div>
           <Form
