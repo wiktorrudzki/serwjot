@@ -5,6 +5,8 @@ import xIcon from '../../assets/icons/x-icon.svg';
 import barsIcon from '../../assets/icons/bars-icon.svg';
 import NavList from './NavList';
 
+import logo from '../../assets/serwjot.png';
+
 const Nav = () => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
@@ -14,11 +16,21 @@ const Nav = () => {
       onBlur={() => setShowMenu(false)}
       className="w-screen flex flex-col fixed top-0 left-0 shadow-custom z-10"
     >
-      <nav className="flex flex-wrap justify-between relative z-10 px-6 py-5 sm:py-6 bg-secondary lg:px-8 xl:px-10">
-        <button>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-200 lg:text-4xl">
-            <a href="#home">{t('title')}</a>
-          </h2>
+      <nav className="flex flex-wrap justify-between relative z-10 px-5 py-3 sm:py-4 bg-secondary lg:px-8 xl:px-10">
+        <button className="">
+          <a
+            className="flex gap-[0.5rem] md:gap-[1rem] items-center"
+            href="#home"
+          >
+            <img
+              className="w-[2.5rem] md:w-[4rem]"
+              src={logo}
+              alt="serwjot logo"
+            />
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-200 lg:text-4xl">
+              {t('title')}
+            </h2>
+          </a>
         </button>
         <button onClick={() => setShowMenu(prev => !prev)}>
           <img className="md:hidden w-6" src={showMenu ? xIcon : barsIcon} />

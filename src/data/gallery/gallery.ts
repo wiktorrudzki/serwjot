@@ -3,6 +3,7 @@ import p2 from '../../assets/images/gallery/2.jpeg';
 import p3 from '../../assets/images/gallery/3.jpg';
 import p4 from '../../assets/images/gallery/4.jpg';
 import p5 from '../../assets/images/gallery/5.jpg';
+import p6 from '../../assets/images/gallery/6.jpeg';
 
 export const gallery = [
   {
@@ -24,5 +25,9 @@ export const gallery = [
   {
     src: p5,
     alt: '5',
+  },
+  {
+    src: p6,
+    alt: '6',
   },
 ];
