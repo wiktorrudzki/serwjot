@@ -3,15 +3,18 @@ import React from 'react';
 type Props = {
   children: React.ReactNode;
   href: string;
+  onClick?: () => void;
 };
 
-const NavItem = ({ children, href }: Props) => (
+const NavItem = ({ children, href, onClick }: Props) => (
   <li
     className="transition-all w-full text-lg font-semibold border-b-2 border-gray-400
   sm:text-lg
   md:border-none md:w-auto md:mx-0 md:py-0 
   lg:text-xl
   xl:text-2xl"
+    onClick={onClick}
+    onTouchMove={onClick}
   >
     <a
       className="pl-6 py-2 block w-full relative after:transition-all after:block after:duration-300

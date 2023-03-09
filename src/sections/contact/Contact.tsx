@@ -44,7 +44,7 @@ const Contact = () => {
             <div className="grid grid-cols-2 gap-[1.75rem]">
               <NameInput
                 onChange={e => setForm('name', e.target.value)}
-                placeholder="Name"
+                placeholder="Imię"
                 error={errors.name}
                 value={form.name}
                 name="name"
@@ -52,7 +52,7 @@ const Contact = () => {
               />
               <NumberInput
                 onChange={e => setForm('number', e.target.value)}
-                placeholder="Phone"
+                placeholder="Numer telefonu"
                 error={errors.number}
                 value={form.number}
                 name="number"
@@ -60,7 +60,7 @@ const Contact = () => {
             </div>
             <EmailInput
               onChange={e => setForm('email', e.target.value)}
-              placeholder="Email address"
+              placeholder="Adres email"
               error={errors.email}
               value={form.email}
               name="email"
@@ -70,7 +70,7 @@ const Contact = () => {
               onChange={e => setForm('message', e.target.value)}
               className="w-full py-[0.75rem] px-[1.1rem] outline-none border-1 shadow-input-shadow rounded-md text-black border-[#d4d7e5] border-solid
       placeholder:text-gray-400"
-              placeholder="Message"
+              placeholder="Wiadomość"
               error={errors.message}
               value={form.message}
               name="message"

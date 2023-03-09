@@ -46,12 +46,10 @@ const Slider = ({ data }: Props) => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-    setTimeout(() => {
-      handleResize();
-    });
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
-  }, [slide.currentTransform]);
+  }, [slide.currentTransform, window]);
 
   const handleSlidingRight = () => {
     changeSlide('currentPhoto', ++slide.currentPhoto);
