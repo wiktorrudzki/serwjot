@@ -9,6 +9,7 @@ const Footer = () => {
       <div className="flex flex-col">
         <span className="text-lg">{t('title')}</span>
         <span>{t('license')}</span>
+        <span>{t('company')}</span>
         <span>{t('author')}</span>
       </div>
       <ul className="flex flex-col lg:flex-row gap-[0.75rem] text-[1.1rem]">
