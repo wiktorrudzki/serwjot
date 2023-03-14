@@ -7,9 +7,8 @@ const Footer = () => {
   return (
     <footer className="bg-secondary pt-[2rem] text-white pb-[2rem] md:pb-[4rem] flex flex-col gap-[2rem] md:gap-0 px-[2rem] md:flex-row justify-around md:px-[5rem] lg:px-[8rem]">
       <div className="flex flex-col">
-        <span className="text-lg">{t('title')}</span>
-        <span>{t('license')}</span>
         <span>{t('company')}</span>
+        <span>{t('license')}</span>
         <span>{t('author')}</span>
       </div>
       <ul className="flex flex-col lg:flex-row gap-[0.75rem] text-[1.1rem]">
